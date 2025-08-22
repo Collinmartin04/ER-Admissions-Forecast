@@ -1,0 +1,20 @@
+# Core
+pandas==2.2.2
+numpy==1.26.4
+
+# Modeling
+scikit-learn==1.5.1
+statsmodels==0.14.2
+xgboost==2.1.1
+prophet==1.1.5
+holidays==0.51
+
+# Visualization
+matplotlib==3.9.2
+plotly==5.24.1
+
+# App
+streamlit==1.38.0
+
+# Jupyter (optional, for notebooks)
+jupyter==1.0.0

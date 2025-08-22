@@ -1,0 +1,55 @@
+🏥 ER Admissions Forecasting (NHS England)
+
+This project predicts monthly Emergency Room (ER) attendances in England to help hospitals
+better manage staffing and resources. The pipeline goes from raw NHS data to interactive
+Streamlit dashboards.
+
+────────────────────────────
+1. DATA COLLECTION & CLEANING
+────────────────────────────
+- Data source: NHS England monthly A&E attendances (time series CSV).
+- Cleaned dates, standardized format, removed non-numeric rows.
+- Saved cleaned data into data/processed/ae_timeseries_clean.csv.
+
+────────────────────────────
+2. FEATURE ENGINEERING
+────────────────────────────
+- Created lag features (1, 2, 3, 12 months).
+- Built rolling averages and standard deviations (3, 6, 12 months).
+- Encoded seasonality (month, quarter, sine/cosine transforms).
+- Added UK public holiday flags per month.
+- Saved into data/processed/ae_features.csv.
+
+────────────────────────────
+3. BASELINE MODELS
+────────────────────────────
+- Seasonal-Naïve: predicts this month = value from same month last year.
+- SARIMAX: statistical time-series model tuned via AIC grid search.
+- Prophet: additive model with holidays & seasonality.
+- XGBoost: gradient boosting regression on engineered features.
+
+────────────────────────────
+4. EVALUATION
+────────────────────────────
+- Train/validation split: last 12 months held out for testing.
+- Metrics: MAPE (percentage error) and RMSE (scale error).
+- Seasonal-Naïve MAPE ~3.1%; SARIMAX reduced error to ~1.8% (≈43% improvement).
+- Prophet underperformed; XGB landed between SARIMAX and Naïve.
+
+────────────────────────────
+5. RESULTS & INSIGHTS
+────────────────────────────
+- SARIMAX was the best performer (lowest MAPE and RMSE).
+- Shows the power of classical time-series modeling when strong seasonality exists.
+- Feature engineering and XGB worked well but not as strong as SARIMAX.
+- Prophet struggled on this dataset (not holiday-driven).
+
+────────────────────────────
+6. DASHBOARD (Streamlit)
+────────────────────────────
+- app.py provides an interactive dashboard:
+  * Compare models (Naïve, SARIMAX, Prophet, XGB).
+  * KPI cards for MAPE and RMSE.
+  * Line charts (actual vs forecast).
+  * Downloadable CSV predictions.
+- Deployed to Streamlit Cloud for live demo.
