@@ -1,4 +1,11 @@
-# 🏥 ER Admissions Forecasting (NHS England)
+# 🏥 Emergency Room Demand Forecasting
+
+### NHS England | Time Series Analysis & Machine Learning
+
+Forecasting emergency department attendances using 15 years
+of NHS England data. Compared SARIMAX, Prophet, and XGBoost
+against a seasonal baseline, achieving a 43% reduction
+in forecasting error.
 
 ## 📌 Project Overview  
 Hospitals often face **unpredictable demand** in Emergency Rooms (ER), leading to under- or over-staffing. This project builds forecasting models on **NHS England A&E monthly attendance data** to predict demand and support better operational planning.  
