@@ -43,7 +43,7 @@ Hospitals often face **unpredictable demand** in Emergency Rooms (ER), leading t
 
 ## 🖥️ Streamlit App  
 Try the interactive dashboard here:  
-👉 [Live Demo on Streamlit Cloud](https://your-streamlit-link-here)  
+👉 [Live Demo on Streamlit Cloud](https://er-admissions-forecast-vbdttw7nayjqnqxjdjfbxu.streamlit.app/)  
 
 Features:  
 - Compare actual vs forecast across models.  
