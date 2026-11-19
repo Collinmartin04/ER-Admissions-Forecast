@@ -71,17 +71,18 @@ st.markdown(
     "Achieved a 43% reduction in forecasting error compared with a seasonal baseline.**"
 )
 
-st.info("""
-**Models:**
-- **Naïve** → assumes this month will look the same as the same month last year.  
-- **SARIMAX** → a classic stats model that learns seasonal patterns.  
-- **Prophet** → a forecasting tool from Facebook, good for trends/holidays.  
-- **XGB** → a machine learning model using many past features.
+with st.expander("ℹ️ About the Models & Metrics", expanded=False):
+    st.markdown("""
+    **Forecasting Models**
+    - **Seasonal Naïve:** Predicts attendance using the same month from the previous year.
+    - **SARIMAX:** Statistical model that captures trends and seasonal patterns.
+    - **Prophet:** Forecasting model for trends, seasonality, and holidays.
+    - **XGBoost:** Machine learning model using engineered historical features.
 
-**Metrics:**
-- **MAPE** → average % error (lower is better).  
-- **RMSE** → size of mistakes in number of attendances (lower is better).
-""")
+    **Evaluation Metrics**
+    - **MAPE:** Mean Absolute Percentage Error. Lower is better.
+    - **RMSE:** Root Mean Squared Error, measured in attendances. Lower is better.
+    """)
 
 ts = load_core()
 preds, leaderboard = load_predictions()
@@ -93,8 +94,13 @@ model_choice = st.sidebar.selectbox(
     ["SARIMAX", "XGB (tuned)", "Naïve-12", "Prophet"],
     index=0
 )
-months = st.sidebar.slider("Months to display", min_value=24, max_value=120, value=48, step=12)
-
+months = st.sidebar.slider(
+    "Months to display",
+    min_value=24,
+    max_value=120,
+    value=24,
+    step=12
+)
 
 # --- KPIs (robust lookup) ---
 # Map the sidebar labels to exact leaderboard "Model" values
