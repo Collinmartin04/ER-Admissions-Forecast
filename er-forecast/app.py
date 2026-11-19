@@ -7,7 +7,8 @@ import plotly.graph_objects as go
 st.set_page_config(page_title="ER Admissions Forecast", page_icon="🏥", layout="wide")
 
 # Paths
-DATA_DIR = Path("data/processed")
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "data" / "processed"
 PRED_DIR = DATA_DIR / "predictions"
 
 # --- Load Data ---
