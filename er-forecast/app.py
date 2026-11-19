@@ -4,7 +4,8 @@ import streamlit as st
 from pathlib import Path
 import plotly.graph_objects as go
 
-st.set_page_config(page_title="ER Admissions Forecast", page_icon="🏥", layout="wide")
+st.title("Emergency Department Demand Forecasting")
+st.caption("NHS England | Time Series Analysis & Machine Learning")
 
 # Paths
 BASE_DIR = Path(__file__).resolve().parent
