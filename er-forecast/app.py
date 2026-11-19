@@ -4,8 +4,6 @@ import streamlit as st
 from pathlib import Path
 import plotly.graph_objects as go
 
-st.title("Emergency Department Demand Forecasting")
-st.caption("NHS England | Time Series Analysis & Machine Learning")
 
 # Paths
 BASE_DIR = Path(__file__).resolve().parent
@@ -56,8 +54,22 @@ def plot_series(ts, preds, model_name, months=48):
     return fig
 
 # --- Main UI ---
-st.title("🏥 ER Admissions Forecast (NHS England)")
-st.caption("Forecasting models on NHS A&E monthly data. Reduced forecast error by ~43% vs seasonal naïve.")
+st.set_page_config(
+    page_title="Emergency Department Demand Forecasting",
+    page_icon="🏥",
+    layout="wide"
+)
+
+st.title("🏥 Emergency Department Demand Forecasting")
+
+st.caption(
+    "NHS England | Time Series Analysis & Machine Learning"
+)
+
+st.markdown(
+    "**Forecasting emergency department attendances using 15 years of NHS data. "
+    "Achieved a 43% reduction in forecasting error compared with a seasonal baseline.**"
+)
 
 st.info("""
 **Models:**
