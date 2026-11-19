@@ -1,19 +1,28 @@
-# 🏥 Emergency Room Demand Forecasting
+# 🏥 Emergency Department Demand Forecasting
 
 ### NHS England | Time Series Analysis & Machine Learning
 
-Forecasting emergency department attendances using 15 years
-of NHS England data. Compared SARIMAX, Prophet, and XGBoost
-against a seasonal baseline, achieving a 43% reduction
-in forecasting error.
+Developed an end-to-end forecasting project using 15 years of NHS England emergency department attendance data. Compared SARIMAX, Prophet, and XGBoost against a seasonal-naïve baseline, achieving a **43% reduction in forecasting error (MAPE: 3.10% to 1.77%)**.
 
-## 📌 Project Overview  
-Hospitals often face **unpredictable demand** in Emergency Rooms (ER), leading to under- or over-staffing. This project builds forecasting models on **NHS England A&E monthly attendance data** to predict demand and support better operational planning.  
+### 🚀 Live Interactive Dashboard
 
-## 🎯 Objectives  
-- Forecast **monthly ER attendances** 1–3 months ahead.  
-- Benchmark against a **seasonal-naïve baseline** (last year’s same month).  
-- Improve accuracy to reduce staffing risk and waiting times.  
+[View the Forecasting Dashboard](https://er-admissions-forecast-vbdttw7nayjqnqxjdjfbxu.streamlit.app/)
+
+## 📌 Project Overview
+
+Emergency departments face fluctuating patient demand, making staffing, resource allocation, and capacity planning challenging.
+
+This project analyzes historical **NHS England A&E attendance data** to identify trends and seasonal patterns, develop time series forecasting models, and evaluate their ability to predict monthly patient demand.
+
+The goal is to demonstrate how data-driven forecasting can support more informed healthcare operational planning.
+
+## 🎯 Objectives
+
+- Forecast **monthly emergency department attendances** 1–3 months ahead.
+- Compare statistical and machine learning models, including **SARIMAX, Prophet, and XGBoost**.
+- Benchmark against a **seasonal-naïve baseline**, which predicts demand using the same month from the previous year.
+- Evaluate forecasting accuracy using **MAPE and RMSE**.
+- Explore how accurate forecasts could support **staffing, resource allocation, and capacity planning**.
 
 ## 🛠️ Approach  
 1. **Data Collection & Cleaning**  
